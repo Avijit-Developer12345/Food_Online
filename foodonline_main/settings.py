@@ -147,3 +147,7 @@ from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
   messages.ERROR: 'danger',
 }
+
+CSRF_COOKIE_SECURE = False
+CSRF_USE_SESSIONS = False
+CSRF_COOKIE_HTTPONLY = False

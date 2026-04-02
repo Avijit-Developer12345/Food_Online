@@ -78,6 +78,15 @@ class User(AbstractBaseUser): # *
   def has_module_perms(self,app_label):
     return True
   
+  def detectUser(user):
+    if user.role == 1:
+        return 'vendorDashboard'
+    elif user.role == 2:
+        return 'custDashboard'
+    
+    return 'custDashboard'   # fallback
+
+  
 
 class UserProfile(models.Model):
   user = models.OneToOneField(User,on_delete = models.CASCADE,blank=True,null=True)
